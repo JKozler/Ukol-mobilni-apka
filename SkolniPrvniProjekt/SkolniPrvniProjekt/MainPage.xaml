@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SkolniPrvniProjekt.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="Green" Padding="24" CornerRadius="0">
+            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="46"/>
+        </Frame>
+        <Entry x:Name="jameno" Placeholder="Zadej jméno"></Entry>
+        
+        <Label FontSize="16" Padding="30,24,30,0" BindingContext="{x:Reference jameno}">
+            <Label.FormattedText>
+                <FormattedString>
+                    <FormattedString.Spans>
+                        <Span x:Name="nameIs" Text="{Binding Text}" FontAttributes="Bold"/>
+                    </FormattedString.Spans>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Button Text="cmon" x:Name="prepis" Clicked="prepis_Clicked"></Button>
+    </StackLayout>
+
+</ContentPage>
